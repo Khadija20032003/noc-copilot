@@ -1,0 +1,184 @@
+{
+  "R1": {
+    "expected_root_cause": null,
+    "root_cause_name": null,
+    "expected_severity": null,
+    "serving_pci": 101,
+    "site_name": "STO-Sodermalm",
+    "evidence": "Healthy reference route: all radio KPIs Good and throughput above target.",
+    "stats": {
+      "rows": 60,
+      "time_range": [
+        "2026-09-15T09:00:00",
+        "2026-09-15T09:00:59"
+      ],
+      "serving_pcis": [
+        101
+      ],
+      "neighbor_pcis": [
+        102
+      ],
+      "avg_dl_throughput_mbps": 865.2,
+      "avg_ss_rsrp_dbm": -78.1,
+      "avg_ss_sinr_db": 20.3,
+      "avg_ss_rsrq_db": -7.9,
+      "avg_scheduled_rbs": 249.4,
+      "avg_ue_speed_kmh": 24.9,
+      "min_serving_distance_km": 0.26,
+      "max_serving_distance_km": 0.66,
+      "serving_pci_changes": 0
+    }
+  },
+  "R2": {
+    "expected_root_cause": "RC2",
+    "root_cause_name": "Overshooting",
+    "expected_severity": "P3",
+    "serving_pci": 307,
+    "site_name": "STO-Kungsholmen",
+    "evidence": "UE served by PCI 307 (STO-Kungsholmen, downtilt 2) at more than 1 km.",
+    "stats": {
+      "rows": 60,
+      "time_range": [
+        "2026-09-15T09:30:00",
+        "2026-09-15T09:30:59"
+      ],
+      "serving_pcis": [
+        307
+      ],
+      "neighbor_pcis": [
+        204
+      ],
+      "avg_dl_throughput_mbps": 260.1,
+      "avg_ss_rsrp_dbm": -106.0,
+      "avg_ss_sinr_db": 1.6,
+      "avg_ss_rsrq_db": -14.5,
+      "avg_scheduled_rbs": 235.6,
+      "avg_ue_speed_kmh": 19.7,
+      "min_serving_distance_km": 1.41,
+      "max_serving_distance_km": 1.73,
+      "serving_pci_changes": 0
+    }
+  },
+  "R3": {
+    "expected_root_cause": "RC6",
+    "root_cause_name": "PCI mod 30 conflict between serving and neighbor cell causes interference",
+    "expected_severity": "P3",
+    "serving_pci": 205,
+    "site_name": "STO-Norrmalm",
+    "evidence": "Serving PCI 205 and strong co-frequency neighbor PCI 145 share PCI mod 30 = 25; poor SINR.",
+    "stats": {
+      "rows": 60,
+      "time_range": [
+        "2026-09-15T10:00:00",
+        "2026-09-15T10:00:59"
+      ],
+      "serving_pcis": [
+        205
+      ],
+      "neighbor_pcis": [
+        145
+      ],
+      "avg_dl_throughput_mbps": 241.8,
+      "avg_ss_rsrp_dbm": -87.8,
+      "avg_ss_sinr_db": 0.5,
+      "avg_ss_rsrq_db": -13.5,
+      "avg_scheduled_rbs": 239.6,
+      "avg_ue_speed_kmh": 14.9,
+      "min_serving_distance_km": 0.34,
+      "max_serving_distance_km": 0.56,
+      "serving_pci_changes": 0
+    }
+  },
+  "R4": {
+    "expected_root_cause": "RC8",
+    "root_cause_name": "Low scheduled resources",
+    "expected_severity": "P3",
+    "serving_pci": 102,
+    "site_name": "STO-Sodermalm",
+    "evidence": "Average scheduled RBs below 160 with no radio KPI in the Poor band.",
+    "stats": {
+      "rows": 60,
+      "time_range": [
+        "2026-09-15T10:30:00",
+        "2026-09-15T10:30:59"
+      ],
+      "serving_pcis": [
+        102
+      ],
+      "neighbor_pcis": [
+        103
+      ],
+      "avg_dl_throughput_mbps": 335.4,
+      "avg_ss_rsrp_dbm": -82.0,
+      "avg_ss_sinr_db": 16.0,
+      "avg_ss_rsrq_db": -9.1,
+      "avg_scheduled_rbs": 113.0,
+      "avg_ue_speed_kmh": 9.9,
+      "min_serving_distance_km": 0.29,
+      "max_serving_distance_km": 0.44,
+      "serving_pci_changes": 0
+    }
+  },
+  "R5": {
+    "expected_root_cause": "RC7",
+    "root_cause_name": "High UE speed (above 40 km/h)",
+    "expected_severity": "P3",
+    "serving_pci": 204,
+    "site_name": "STO-Norrmalm",
+    "evidence": "UE speed above 40 km/h during the low throughput samples.",
+    "stats": {
+      "rows": 50,
+      "time_range": [
+        "2026-09-15T11:00:00",
+        "2026-09-15T11:00:49"
+      ],
+      "serving_pcis": [
+        204
+      ],
+      "neighbor_pcis": [
+        412
+      ],
+      "avg_dl_throughput_mbps": 423.7,
+      "avg_ss_rsrp_dbm": -90.0,
+      "avg_ss_sinr_db": 8.9,
+      "avg_ss_rsrq_db": -10.9,
+      "avg_scheduled_rbs": 223.1,
+      "avg_ue_speed_kmh": 70.9,
+      "min_serving_distance_km": 0.2,
+      "max_serving_distance_km": 0.55,
+      "serving_pci_changes": 0
+    }
+  },
+  "R6": {
+    "expected_root_cause": "RC5",
+    "root_cause_name": "Frequent handovers degrade performance",
+    "expected_severity": "P3",
+    "serving_pci": 101,
+    "site_name": "STO-Sodermalm",
+    "evidence": "3 or more serving_pci changes within 60 s, with ping-pong between PCIs 101 and 102.",
+    "stats": {
+      "rows": 60,
+      "time_range": [
+        "2026-09-15T11:30:00",
+        "2026-09-15T11:30:59"
+      ],
+      "serving_pcis": [
+        101,
+        102
+      ],
+      "neighbor_pcis": [
+        101,
+        102
+      ],
+      "avg_dl_throughput_mbps": 664.8,
+      "avg_ss_rsrp_dbm": -86.0,
+      "avg_ss_sinr_db": 7.2,
+      "avg_ss_rsrq_db": -11.6,
+      "avg_scheduled_rbs": 222.6,
+      "avg_ue_speed_kmh": 15.3,
+      "min_serving_distance_km": 0.4,
+      "max_serving_distance_km": 0.47,
+      "serving_pci_changes": 5
+    }
+  }
+}
