@@ -1,0 +1,24 @@
+# Secrets
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Generated data (scenarios.json is committed: it is the eval ground truth)
+data/*.db
+data/tickets.json
+
+# Node
+node_modules/
+frontend/dist/
+
+# OS / editors
+.claude/
+.DS_Store
+.vscode/
+.idea/
