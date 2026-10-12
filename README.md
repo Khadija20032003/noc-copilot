@@ -83,7 +83,9 @@ The workflow is not hard-coded. The Supervisor is an LLM with structured output 
 
 ## What I would improve with more time
 - **Latency:** a diagnosis is 10 to 20 sequential LLM calls. Run Research and the Analyst in parallel, add a `route_summary` tool for the standard checks, and stream the trace to the UI.
-- **Reliability:** the Verifier still rejects some correct diagnoses (e.g. route R2); tune it and run the eval over several models in CI.
+- **Reliability:** the Verifier still rejects some correct diagnoses (e.g. route R2); tune it and compare several models on the eval.
 - **Retrieval:** hybrid BM25 + embeddings with a reranker once the corpus grows.
-- **Production:** persistent checkpointer, authentication and rate limits, only accept tickets the assistant proposed, OpenTelemetry tracing.
+- **Production:** persistent checkpointer (Postgres instead of `MemorySaver`, so the API can run on several instances), authentication and rate limits, only accept tickets the assistant proposed.
+- **Observability:** trace every turn in LangSmith (native to LangGraph) or Langfuse (open source, self-hostable): each agent step, tool call, prompt, token cost and latency. Log the Verifier verdicts and ticket approvals or rejections as feedback, alert on drops in approval rate or spikes in latency and errors, and turn engineers' rejected answers into new golden questions.
+- **Deployment:** Docker images for the API and UI, secrets in a secret manager instead of `.env`, and a CI/CD pipeline that runs the tests and then the golden-set eval as a gate: a prompt or model change ships only if root cause accuracy and Verifier approval do not drop. Roll out gradually (canary or shadow mode on real tickets) with the prompt and model version logged on each answer, so a regression can be traced and rolled back.
 - **Data realism:** routes last about 1 minute and there is no busy-cell flag, so some escalation rules cannot be checked from data.
